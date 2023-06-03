@@ -138,7 +138,7 @@ model.fit(X_train, y_train)
 # Make predictions on the testing set
 y_pred = model.predict(X_test)
 
-# Evaluate the model
+# Calculate MSE
 mse = mean_squared_error(y_test, y_pred)
 print(f"Mean Squared Error: {mse}")
 

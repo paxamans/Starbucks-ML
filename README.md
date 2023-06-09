@@ -128,9 +128,18 @@ X = data.drop('calories', axis=1)
 y = data['calories']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
 
+
 # Define the model
 model = Pipeline(steps=[('preprocessor', preprocessor),
-                        ('regressor', RandomForestRegressor())])
+                        ('regressor', LinearRegression())])
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions on the testing set
+y_pred = model.predict(X_test)
+
+# Calculate MSE, RMSE, MAE as before...
 
 # Train the model
 model.fit(X_train, y_train)
@@ -151,7 +160,7 @@ mae = mean_absolute_error(y_test, y_pred)
 print(f"Mean Absolute Error: {mae}")
 ```
 
-    Mean Squared Error: 2020.23375
-    Root Mean Squared Error: 44.94701046788318
-    Mean Absolute Error: 25.137500000000003
+    Mean Squared Error: 92.44481025848326
+    Root Mean Squared Error: 9.614822424698403
+    Mean Absolute Error: 7.4193065919477466
     

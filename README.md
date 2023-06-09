@@ -133,18 +133,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = Pipeline(steps=[('preprocessor', preprocessor),
                         ('regressor', LinearRegression())])
 
-# Train the model
 model.fit(X_train, y_train)
-
-# Make predictions on the testing set
 y_pred = model.predict(X_test)
-
-# Calculate MSE, RMSE, MAE as before...
-
-# Train the model
 model.fit(X_train, y_train)
-
-# Make predictions on the testing set
 y_pred = model.predict(X_test)
 
 # Calculate MSE
